@@ -18,31 +18,19 @@
       padding: 4rem 1rem 3rem 1rem;
       background: linear-gradient(120deg, #00C6FF, #0072FF);
       color: #fff;
-      position: relative;
-      overflow: hidden;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      animation: fadeInDown 1s ease-out forwards;
     }
     header p {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin: 0;
-      animation: fadeInUp 1s ease-out forwards;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      opacity: 0.9;
     }
     .buttons {
       margin-top: 2rem;
-      animation: fadeIn 1.5s ease-out forwards;
     }
     .buttons a {
       display: inline-block;
@@ -66,8 +54,8 @@
       margin: 4rem auto;
       padding: 0 1rem;
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease-out;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
     }
     section.visible {
       opacity: 1;
@@ -77,31 +65,24 @@
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       color: #0072FF;
-      margin-bottom: 2.5rem;
-      font-size: 2.2rem;
-    }
-    .about-text {
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      max-width: 850px;
-      margin: 0 auto 3.5rem auto;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.2rem;
+      gap: 2rem;
     }
     .card {
-      background: linear-gradient(145deg, #e0f7fa, #ffffff);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       overflow: hidden;
       transition: transform 0.25s, box-shadow 0.25s;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
     .card img {
       width: 100%;
@@ -109,29 +90,31 @@
       object-fit: cover;
     }
     .card-content {
-      padding: 1.3rem 1.5rem;
+      padding: 1.2rem;
     }
     .card-content h3 {
       margin-top: 0;
       color: #0072FF;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-family: 'Montserrat', sans-serif;
     }
     .card-content p {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #555;
     }
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.8rem;
+      margin-top: 2rem;
     }
     .skill-card {
-      background: linear-gradient(135deg, #00C6FF, #0072FF);
+      background: #0072FF;
       color: #fff;
-      padding: 0.8rem 1.4rem;
-      border-radius: 10px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s;
@@ -166,90 +149,42 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p class="about-text">
-      Motivated and curious individual with growing expertise in Java, Python, React.js, and AI. Experienced in building real-world projects blending software development with strategic digital marketing for impactful user and business results.
+    <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem;">
+      Passionate Java full stack developer and digital marketer skilled in building scalable software and crafting impactful marketing strategies. Blending technical expertise with business understanding to deliver real-world solutions.
     </p>
   </section>
 
-  <!-- Internships -->
-  <section id="internships">
-    <h2>Internship Experience</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://source.unsplash.com/600x400/?robotics,military" alt="CVRDE Internship">
-        <div class="card-content">
-          <h3>Software Dev Intern - CVRDE (DRDO)</h3>
-          <p>Worked on helmet-mounted display UI prototyping and integration for military tank systems enhancing data usability pipelines.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/600x400/?sustainability,branding" alt="Gratify Eco Gifts">
-        <div class="card-content">
-          <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
-          <p>Developed SEO and digital marketing strategies for eco-friendly branding and corporate collaborations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
   <section id="projects">
-    <h2>Software Development Projects</h2>
+    <h2>Projects</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?doctor,booking,app" alt="Doctor Booking Website">
+        <img src="https://source.unsplash.com/600x400/?doctor,app" alt="Doctor Booking">
         <div class="card-content">
           <h3>Doctor Booking Website</h3>
-          <p>MERN stack app for real-time patient-doctor scheduling with secure authentication and admin dashboards.</p>
+          <p>MERN stack app with real-time scheduling and secure authentication for patient-doctor management.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?portfolio,webdesign" alt="Portfolio Website">
+        <img src="https://source.unsplash.com/600x400/?portfolio,web" alt="Portfolio">
         <div class="card-content">
           <h3>Personal Portfolio</h3>
-          <p>Responsive portfolio showcasing projects, skills, and experiences with modern UI design and deployment.</p>
+          <p>Responsive website showcasing projects, skills, and internships with clean UI and deployment on GitHub Pages.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Digital Marketing -->
-  <section id="marketing">
-    <h2>Digital Marketing Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://source.unsplash.com/600x400/?seo,analytics" alt="SEO Project">
-        <div class="card-content">
-          <h3>Eco Gifts SEO Project</h3>
-          <p>Optimized SEO for eco-gifting brand increasing organic traffic by 40% within 3 months with targeted keyword strategy.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/600x400/?ads,campaign" alt="Ad Campaign">
-        <div class="card-content">
-          <h3>Ad Campaign Optimization</h3>
-          <p>Managed Google Ads campaigns, reduced CPC by 20%, and improved conversions efficiently.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
   <section id="skills">
-    <h2>Skills & Technologies</h2>
+    <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">Java</div>
       <div class="skill-card">Spring Boot</div>
       <div class="skill-card">React.js</div>
-      <div class="skill-card">HTML & CSS</div>
       <div class="skill-card">MySQL</div>
       <div class="skill-card">Python</div>
       <div class="skill-card">AI Basics</div>
-      <div class="skill-card">SEO & SEM</div>
-      <div class="skill-card">Google Analytics</div>
-      <div class="skill-card">Ad Optimization</div>
-      <div class="skill-card">Data Analysis</div>
-      <div class="skill-card">Sustainability Branding</div>
+      <div class="skill-card">SEO</div>
+      <div class="skill-card">Google Ads</div>
     </div>
   </section>
 
@@ -257,26 +192,14 @@
     <p>© 2025 Vishwa Sakthivel</p>
     <div>
       <a href="mailto:vishwasakthivel374@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/">LinkedIn</a>
+      <a href="https://linkedin.com/in/vishwa-sakthivel-662154255/">LinkedIn</a>
       <a href="https://github.com/vishwa374">GitHub</a>
     </div>
   </footer>
 
-  <!-- JavaScript for scroll reveal animation -->
   <script>
     const sections = document.querySelectorAll('section');
-    const revealSection = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < triggerBottom){
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealSection);
-    window.addEventListener('load', revealSection);
-  </script>
-
-</body>
-</html>
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(s => {
+        const top = s.getBoundingClientRect().t
