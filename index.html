@@ -4,15 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishwa Sakthivel | Portfolio</title>
-  <link rel="stylesheet" href="index.css" />
-  <!-- Google Fonts for modern typography -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;300&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/1d9b7b3a9c.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       background: linear-gradient(120deg, #e0eafc, #cfdef3 100%);
       color: #222;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1000;
     }
     nav {
       background: #222;
@@ -116,13 +124,6 @@
       font-size: 1.06rem;
       margin-bottom: 0.5rem;
     }
-    #contact a {
-      color: #00A8E8;
-      text-decoration: underline;
-    }
-    #contact a:hover {
-      color: #005f75;
-    }
     .contact-links {
       display: flex;
       align-items: center;
@@ -131,22 +132,21 @@
       flex-wrap: wrap;
     }
     .contact-links a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #00A8E8;
+      background: linear-gradient(120deg, #00A8E8, #007EA7);
       color: #fff;
-      padding: 0.5rem 1.1rem;
-      border-radius: 20px;
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .contact-links a:hover {
-      background: #007EA7;
-    }
-    .contact-icon {
-      font-size: 1.2em;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
     }
     footer {
       text-align: center;
@@ -167,8 +167,6 @@
       }
     }
   </style>
-  <!-- Font Awesome CDN for icons -->
-  <script src="https://kit.fontawesome.com/1d9b7b3a9c.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
@@ -236,14 +234,67 @@
     <h2>Contact</h2>
     <p>Feel free to reach out for collaborations or opportunities!</p>
     <div class="contact-links">
-      <a href="mailto:vishwasakthivel374@gmail.com" target="_blank"><span class="contact-icon"><i class="fas fa-envelope"></i></span> Email</a>
-      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/" target="_blank"><span class="contact-icon"><i class="fab fa-linkedin"></i></span> LinkedIn</a>
-      <a href="https://github.com/vishwa374" target="_blank"><span class="contact-icon"><i class="fab fa-github"></i></span> GitHub</a>
+      <a href="mailto:vishwasakthivel374@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/vishwa374" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Vishwa Sakthivel &mdash; Made with <span style="color:#00A8E8;">&#10084;</span> | <a style="color:#fff;text-decoration:underline;" href="https://github.com/vishwa374/vishwa.github.io" target="_blank">View Source</a></p>
+    <p>© 2025 Vishwa Sakthivel — Made with <span style="color:#00A8E8;">&#10084;</span></p>
   </footer>
+
+  <!-- Snow Effect Script -->
+  <script>
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const numFlakes = 70;
+    const flakes = [];
+    for (let i = 0; i < numFlakes; i++) {
+      flakes.push({ x: Math.random() * width, y: Math.random() * height, r: Math.random() * 4 + 1, d: Math.random() * numFlakes });
+    }
+    function drawSnow() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'white';
+      ctx.beginPath();
+      for (let i = 0; i < numFlakes; i++) {
+        const f = flakes[i];
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+      updateSnow();
+    }
+    let angle = 0;
+    function updateSnow() {
+      angle += 0.003;
+      for (let i = 0; i < numFlakes; i++) {
+        const f = flakes[i];
+        f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
+        f.x += Math.sin(angle) * 2;
+        if (f.x > width + 5 || f.x < -5 || f.y > height) {
+          if (i % 3 > 0) {
+            flakes[i] = { x: Math.random() * width, y: -10, r: f.r, d: f.d };
+          } else {
+            if (Math.sin(angle) > 0) {
+              flakes[i] = { x: -5, y: Math.random() * height, r: f.r, d: f.d };
+            } else {
+              flakes[i] = { x: width + 5, y: Math.random() * height, r: f.r, d: f.d };
+            }
+          }
+        }
+      }
+    }
+    setInterval(drawSnow, 33);
+  </script>
 </body>
 </html>
+
