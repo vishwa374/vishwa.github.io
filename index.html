@@ -5,204 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishwa Sakthivel | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;300&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/1d9b7b3a9c.js" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
       background: #f9fafc;
       color: #222;
     }
-    nav {
-      background: #222;
-      padding: 0.5rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    nav a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-    }
     header {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem 3rem 1rem;
       background: #00A8E8;
       color: #fff;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      margin: 0 0 0.5rem 0;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 0;
+      font-size: 1.3rem;
+      margin: 0;
     }
     .buttons {
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
     }
     .buttons a {
       display: inline-block;
       margin: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      background: #007EA7;
-      color: #fff;
+      padding: 0.8rem 1.6rem;
+      background: #fff;
+      color: #007EA7;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .buttons a:hover {
-      background: #005f75;
+      background: #007EA7;
+      color: #fff;
     }
     section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
-      padding: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
     }
     section h2 {
+      text-align: center;
       font-family: 'Montserrat', sans-serif;
       color: #007EA7;
-      margin-top: 0;
-      text-align: center;
-    }
-    .internship, .project {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
       margin-bottom: 2rem;
-      flex-wrap: wrap;
     }
-    .internship img, .project img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s;
     }
-    .internship div, .project div {
-      flex: 1;
+    .card:hover {
+      transform: translateY(-5px);
     }
-    .internship h3, .project h3 {
-      margin: 0 0 0.5rem 0;
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem 1.2rem;
+    }
+    .card-content h3 {
+      margin-top: 0;
       color: #007EA7;
+      font-size: 1.2rem;
+    }
+    .card-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
       justify-content: center;
-      margin-top: 1rem;
+      gap: 1rem;
     }
     .skill-card {
-      background: #f1f8fc;
+      background: #e0f3fa;
       color: #007EA7;
-      padding: 0.8rem 1.4rem;
+      padding: 0.7rem 1.2rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 1rem;
     }
     footer {
       text-align: center;
-      padding: 1.2rem;
       background: #222;
       color: #fff;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
     }
-    .contact-links a {
-      margin: 0 1rem;
+    footer a {
       color: #00A8E8;
       text-decoration: none;
-      font-weight: 600;
+      margin: 0 0.8rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#internships">Internships</a></li>
-      <li><a href="#software">Software Dev</a></li>
-      <li><a href="#marketing">Marketing</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
 
   <header>
     <h1>Vishwa Sakthivel</h1>
     <p>Java Full Stack Developer | Digital Marketer</p>
     <div class="buttons">
-      <a href="#software">View My Works</a>
-      <a href="file:///C:/Users/VISHWA/Downloads/RESUME%202.0%20vishwa.pdf" target="_blank">View Resume</a>
+      <a href="#projects">View My Works</a>
+      <a href="YOUR_RESUME_LINK_HERE" target="_blank">View Resume</a>
     </div>
   </header>
 
   <section id="internships">
     <h2>Internship Experience</h2>
-
-    <div class="internship">
-      <img src="https://cdn-icons-png.flaticon.com/512/2740/2740614.png" alt="CVRDE Intern">
-      <div>
-        <h3>Software Development Intern - CVRDE (DRDO)</h3>
-        <p>Worked on helmet-mounted display system integrations and UI prototyping for military applications, enhancing usability and data processing pipelines.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/helmet-dev" alt="CVRDE Internship">
+        <div class="card-content">
+          <h3>Software Dev Intern - CVRDE (DRDO)</h3>
+          <p>Worked on helmet-mounted display UI prototyping and integrations for military tank applications to enhance usability and data pipelines.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="internship">
-      <img src="https://cdn-icons-png.flaticon.com/512/2867/2867257.png" alt="Sustainability Intern">
-      <div>
-        <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
-        <p>Focused on digital marketing and sustainable branding strategies to increase eco-friendly product outreach and corporate collaborations.</p>
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/sustainable-growth" alt="Sustainability Intern">
+        <div class="card-content">
+          <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
+          <p>Developed digital marketing strategies to boost eco-friendly branding and corporate collaborations with sustainable product campaigns.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="software">
+  <section id="projects">
     <h2>Software Development Projects</h2>
-
-    <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/3063/3063826.png" alt="Doctor Booking">
-      <div>
-        <h3>Doctor Booking Website</h3>
-        <p>MERN stack app for patient-doctor scheduling with authentication, real-time bookings, and user dashboards.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/doctor-app" alt="Doctor Booking Website">
+        <div class="card-content">
+          <h3>Doctor Booking Website</h3>
+          <p>MERN stack app for patient-doctor scheduling with secure authentication, real-time booking, and admin dashboards.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/428/428571.png" alt="Portfolio">
-      <div>
-        <h3>Personal Portfolio</h3>
-        <p>Responsive website built with HTML, CSS, deployed on GitHub Pages showcasing projects, skills, and internships.</p>
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/portfolio" alt="Portfolio">
+        <div class="card-content">
+          <h3>Personal Portfolio</h3>
+          <p>Responsive site built with HTML, CSS, GitHub Pages deployment showcasing projects, skills, and internships.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="marketing">
     <h2>Digital Marketing Projects</h2>
-
-    <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="SEO Project">
-      <div>
-        <h3>Eco Gifts SEO Project</h3>
-        <p>Optimized website SEO, increasing organic traffic by 40% within 3 months, enhancing brand visibility for eco-friendly gifting solutions.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/seo" alt="SEO Project">
+        <div class="card-content">
+          <h3>Eco Gifts SEO Project</h3>
+          <p>Optimized website SEO for eco-friendly gifting brand, increasing organic traffic by 40% in 3 months with strategic keyword ranking.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/3791/3791208.png" alt="Ad Campaign">
-      <div>
-        <h3>Ad Campaign Optimization</h3>
-        <p>Managed and optimized Google Ads campaigns, reducing CPC by 20% and increasing conversions significantly for multiple clients.</p>
+      <div class="card">
+        <img src="https://undraw.co/api/illustrations/ad-campaign" alt="Ad Campaign Optimization">
+        <div class="card-content">
+          <h3>Ad Campaign Optimization</h3>
+          <p>Managed and optimized Google Ads campaigns, reducing CPC by 20% while increasing conversions for multiple clients efficiently.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -227,11 +206,12 @@
 
   <footer>
     <p>© 2025 Vishwa Sakthivel</p>
-    <div class="contact-links">
-      <a href="mailto:vishwasakthivel374@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/vishwa374"><i class="fab fa-github"></i> GitHub</a>
+    <div>
+      <a href="mailto:vishwasakthivel374@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/">LinkedIn</a>
+      <a href="https://github.com/vishwa374">GitHub</a>
     </div>
   </footer>
+
 </body>
 </html>
