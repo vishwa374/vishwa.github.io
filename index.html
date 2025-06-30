@@ -10,90 +10,95 @@
       margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
       background: #f9fafc;
-      color: #222;
+      color: #333;
     }
     header {
       text-align: center;
       padding: 4rem 1rem 3rem 1rem;
-      background: #00A8E8;
+      background: linear-gradient(120deg, #00C6FF, #0072FF);
       color: #fff;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin: 0;
     }
     .buttons {
-      margin-top: 1.8rem;
+      margin-top: 2rem;
     }
     .buttons a {
       display: inline-block;
       margin: 0.5rem;
-      padding: 0.8rem 1.6rem;
+      padding: 0.9rem 1.8rem;
       background: #fff;
-      color: #007EA7;
+      color: #0072FF;
       border-radius: 30px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s;
     }
     .buttons a:hover {
-      background: #007EA7;
+      background: #0072FF;
       color: #fff;
+      transform: translateY(-2px);
     }
     section {
-      max-width: 1000px;
-      margin: 3rem auto;
+      max-width: 1100px;
+      margin: 4rem auto;
       padding: 0 1rem;
     }
     section h2 {
       text-align: center;
       font-family: 'Montserrat', sans-serif;
-      color: #007EA7;
-      margin-bottom: 2rem;
+      color: #0072FF;
+      margin-bottom: 2.5rem;
+      font-size: 2.2rem;
     }
     .about-text {
       text-align: center;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: 0 auto 3.5rem auto;
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
     }
     .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      background: linear-gradient(145deg, #e0f7fa, #ffffff);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       overflow: hidden;
-      transition: transform 0.2s;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
     .card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
     }
     .card-content {
-      padding: 1rem 1.2rem;
+      padding: 1.3rem 1.5rem;
     }
     .card-content h3 {
       margin-top: 0;
-      color: #007EA7;
-      font-size: 1.2rem;
+      color: #0072FF;
+      font-size: 1.3rem;
+      font-family: 'Montserrat', sans-serif;
     }
     .card-content p {
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: 1rem;
+      line-height: 1.6;
     }
     .skills-grid {
       display: flex;
@@ -102,11 +107,16 @@
       gap: 1rem;
     }
     .skill-card {
-      background: #e0f3fa;
-      color: #007EA7;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #00C6FF, #0072FF);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      border-radius: 10px;
       font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .skill-card:hover {
+      transform: scale(1.05);
     }
     footer {
       text-align: center;
@@ -116,7 +126,7 @@
       margin-top: 4rem;
     }
     footer a {
-      color: #00A8E8;
+      color: #00C6FF;
       text-decoration: none;
       margin: 0 0.8rem;
     }
@@ -144,14 +154,14 @@
     <h2>Internship Experience</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://undraw.io/illustration/robotics.svg" alt="CVRDE Internship">
+        <img src="https://source.unsplash.com/600x400/?robotics,technology" alt="CVRDE Internship">
         <div class="card-content">
           <h3>Software Dev Intern - CVRDE (DRDO)</h3>
           <p>Worked on helmet-mounted display UI prototyping and integrations for military tank applications to enhance usability and data pipelines.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://undraw.io/illustration/sustainability.svg" alt="Sustainability Intern">
+        <img src="https://source.unsplash.com/600x400/?sustainability,eco" alt="Sustainability Intern">
         <div class="card-content">
           <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
           <p>Developed digital marketing strategies to boost eco-friendly branding and corporate collaborations with sustainable product campaigns.</p>
@@ -164,14 +174,14 @@
     <h2>Software Development Projects</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://undraw.io/illustration/doctor.svg" alt="Doctor Booking Website">
+        <img src="https://source.unsplash.com/600x400/?doctor,app" alt="Doctor Booking Website">
         <div class="card-content">
           <h3>Doctor Booking Website</h3>
           <p>MERN stack app for patient-doctor scheduling with secure authentication, real-time booking, and admin dashboards.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://undraw.io/illustration/portfolio.svg" alt="Portfolio">
+        <img src="https://source.unsplash.com/600x400/?portfolio,web" alt="Portfolio">
         <div class="card-content">
           <h3>Personal Portfolio</h3>
           <p>Responsive site built with HTML, CSS, GitHub Pages deployment showcasing projects, skills, and internships.</p>
@@ -184,14 +194,14 @@
     <h2>Digital Marketing Projects</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://undraw.io/illustration/seo.svg" alt="SEO Project">
+        <img src="https://source.unsplash.com/600x400/?seo,marketing" alt="SEO Project">
         <div class="card-content">
           <h3>Eco Gifts SEO Project</h3>
           <p>Optimized website SEO for eco-friendly gifting brand, increasing organic traffic by 40% in 3 months with strategic keyword ranking.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://undraw.io/illustration/ad_campaign.svg" alt="Ad Campaign Optimization">
+        <img src="https://source.unsplash.com/600x400/?ads,google" alt="Ad Campaign Optimization">
         <div class="card-content">
           <h3>Ad Campaign Optimization</h3>
           <p>Managed and optimized Google Ads campaigns, reducing CPC by 20% while increasing conversions for multiple clients efficiently.</p>
