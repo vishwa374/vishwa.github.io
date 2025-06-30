@@ -4,23 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishwa Sakthivel | Portfolio</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Roboto:wght@400;300&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/1d9b7b3a9c.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
-      background: #f5f7fa;
+      background: #f9fafc;
       color: #222;
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1000;
     }
     nav {
       background: #222;
@@ -39,258 +30,208 @@
       color: #fff;
       font-weight: 700;
       text-decoration: none;
-      letter-spacing: 0.6px;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #00A8E8;
     }
     header {
       text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      background: linear-gradient(120deg, #00A8E8 30%, #007EA7 100%);
+      padding: 3rem 1rem;
+      background: #00A8E8;
       color: #fff;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
-      margin: 0 0 1rem 0;
+      font-size: 2.5rem;
+      margin: 0 0 0.5rem 0;
     }
     header p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-top: 0;
-      font-weight: 400;
+    }
+    .buttons {
+      margin-top: 1.5rem;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #007EA7;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .buttons a:hover {
+      background: #005f75;
     }
     section {
       max-width: 900px;
       margin: 2.5rem auto;
       background: #fff;
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: 0 3px 16px rgba(0,0,0,0.07);
-      padding: 2rem 2.5rem;
+      padding: 2rem;
     }
     section h2 {
       font-family: 'Montserrat', sans-serif;
       color: #007EA7;
       margin-top: 0;
+      text-align: center;
     }
-    .skills-grid, .projects-grid {
+    .internship, .project {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .internship img, .project img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .internship div, .project div {
+      flex: 1;
+    }
+    .internship h3, .project h3 {
+      margin: 0 0 0.5rem 0;
+      color: #007EA7;
+    }
+    .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 1rem;
+      gap: 1rem;
       justify-content: center;
+      margin-top: 1rem;
     }
     .skill-card {
       background: #f1f8fc;
       color: #007EA7;
       padding: 0.8rem 1.4rem;
       border-radius: 8px;
-      box-shadow: 0 1px 4px #e0e9f3;
       font-weight: 600;
-      font-size: 1.05rem;
-      transition: transform 0.18s;
-    }
-    .skill-card:hover {
-      background: #00A8E8;
-      color: #fff;
-      transform: translateY(-3px) scale(1.07);
-    }
-    .project-card {
-      background: #e7f4f9;
-      border-left: 5px solid #00A8E8;
-      border-radius: 8px;
-      box-shadow: 0 1px 8px #e0eafc;
-      padding: 1.1rem 1.3rem;
-      margin: 0.5rem 0;
-      flex: 1 1 250px;
-      min-width: 240px;
-      transition: box-shadow 0.18s;
-    }
-    .project-card h3 {
-      margin: 0 0 0.4rem 0;
-      color: #007EA7;
-      font-size: 1.15rem;
-    }
-    .project-card:hover {
-      box-shadow: 0 4px 18px #b5e1fa;
-      background: #d3f1ff;
-    }
-    .section-heading {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .bg-dev {
-      background: #e0f7fa;
-    }
-    .bg-marketing {
-      background: #fce4ec;
-    }
-    #contact p {
-      font-size: 1.06rem;
-      margin-bottom: 0.5rem;
-    }
-    .contact-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(120deg, #00A8E8, #007EA7);
-      color: #fff;
-      padding: 0.6rem 1.4rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .contact-links a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      font-size: 1rem;
     }
     footer {
       text-align: center;
       padding: 1.2rem;
       background: #222;
       color: #fff;
-      letter-spacing: 0.5px;
-      font-size: 1rem;
       margin-top: 2rem;
     }
-    @media (max-width: 700px) {
-      section {
-        padding: 1.2rem 0.7rem;
-      }
-      .skills-grid, .projects-grid {
-        flex-direction: column;
-        align-items: stretch;
-      }
+    .contact-links a {
+      margin: 0 1rem;
+      color: #00A8E8;
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
+      <li><a href="#internships">Internships</a></li>
       <li><a href="#software">Software Dev</a></li>
       <li><a href="#marketing">Marketing</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#skills">Skills</a></li>
     </ul>
   </nav>
 
   <header>
     <h1>Vishwa Sakthivel</h1>
-    <p>Java Full Stack Developer <span style="color:#FFD700;">|</span> Digital Marketer</p>
+    <p>Java Full Stack Developer | Digital Marketer</p>
+    <div class="buttons">
+      <a href="#software">View My Works</a>
+      <a href="file:///C:/Users/VISHWA/Downloads/RESUME%202.0%20vishwa.pdf" target="_blank">View Resume</a>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Motivated and curious individual with a growing skill set in programming and problem-solving, currently focused on deepening knowledge in Java, Python, and artificial intelligence. Passionate about building user-focused applications that align technology with real-world needs. Continuously learning and driven to contribute to innovative projects blending intelligent systems, smart design, and business impact.</p>
+  <section id="internships">
+    <h2>Internship Experience</h2>
+
+    <div class="internship">
+      <img src="https://cdn-icons-png.flaticon.com/512/2740/2740614.png" alt="CVRDE Intern">
+      <div>
+        <h3>Software Development Intern - CVRDE (DRDO)</h3>
+        <p>Worked on helmet-mounted display system integrations and UI prototyping for military applications, enhancing usability and data processing pipelines.</p>
+      </div>
+    </div>
+
+    <div class="internship">
+      <img src="https://cdn-icons-png.flaticon.com/512/2867/2867257.png" alt="Sustainability Intern">
+      <div>
+        <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
+        <p>Focused on digital marketing and sustainable branding strategies to increase eco-friendly product outreach and corporate collaborations.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="software" class="bg-dev">
-    <h2 class="section-heading">Software Development</h2>
-    <h3>Skills</h3>
+  <section id="software">
+    <h2>Software Development Projects</h2>
+
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/3063/3063826.png" alt="Doctor Booking">
+      <div>
+        <h3>Doctor Booking Website</h3>
+        <p>MERN stack app for patient-doctor scheduling with authentication, real-time bookings, and user dashboards.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/428/428571.png" alt="Portfolio">
+      <div>
+        <h3>Personal Portfolio</h3>
+        <p>Responsive website built with HTML, CSS, deployed on GitHub Pages showcasing projects, skills, and internships.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="marketing">
+    <h2>Digital Marketing Projects</h2>
+
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="SEO Project">
+      <div>
+        <h3>Eco Gifts SEO Project</h3>
+        <p>Optimized website SEO, increasing organic traffic by 40% within 3 months, enhancing brand visibility for eco-friendly gifting solutions.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/3791/3791208.png" alt="Ad Campaign">
+      <div>
+        <h3>Ad Campaign Optimization</h3>
+        <p>Managed and optimized Google Ads campaigns, reducing CPC by 20% and increasing conversions significantly for multiple clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
     <div class="skills-grid">
-      <div class="skill-card"><i class="fab fa-java"></i> Java</div>
-      <div class="skill-card"><i class="fas fa-leaf"></i> Spring Boot</div>
-      <div class="skill-card"><i class="fab fa-react"></i> React.js</div>
-      <div class="skill-card"><i class="fab fa-html5"></i> HTML & CSS</div>
-      <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
-      <div class="skill-card"><i class="fas fa-code"></i> Python</div>
-      <div class="skill-card"><i class="fas fa-brain"></i> AI Basics</div>
-    </div>
-
-    <h3>Projects</h3>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3><i class="fas fa-user-md"></i> Doctor Booking Website</h3>
-        <p>MERN stack app for patient-doctor scheduling with secure authentication and responsive design.</p>
-      </div>
-      <div class="project-card">
-        <h3><i class="fas fa-id-card-alt"></i> Personal Portfolio</h3>
-        <p>Responsive portfolio built with HTML, CSS, and deployed on GitHub Pages showcasing skills and projects.</p>
-      </div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Spring Boot</div>
+      <div class="skill-card">React.js</div>
+      <div class="skill-card">HTML & CSS</div>
+      <div class="skill-card">MySQL</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">AI Basics</div>
+      <div class="skill-card">SEO & SEM</div>
+      <div class="skill-card">Google Analytics</div>
+      <div class="skill-card">Ad Optimization</div>
+      <div class="skill-card">Data Analysis</div>
+      <div class="skill-card">Sustainability Branding</div>
     </div>
   </section>
 
-  <section id="marketing" class="bg-marketing">
-    <h2 class="section-heading">Digital Marketing</h2>
-    <h3>Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-card"><i class="fas fa-search"></i> SEO & SEM</div>
-      <div class="skill-card"><i class="fab fa-google"></i> Google Analytics</div>
-      <div class="skill-card"><i class="fas fa-chart-line"></i> Ad Optimization</div>
-      <div class="skill-card"><i class="fas fa-chart-bar"></i> Data Analysis</div>
-    </div>
-
-    <h3>Projects</h3>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3><i class="fas fa-leaf"></i> Eco Gifts SEO Project</h3>
-        <p>Improved organic ranking for eco-friendly gifting brand, resulting in a 40% traffic increase in 3 months.</p>
-      </div>
-      <div class="project-card">
-        <h3><i class="fas fa-bullhorn"></i> Ad Campaign Optimization</h3>
-        <p>Managed & optimized Google Ads campaigns, reducing CPC by 20% and increasing conversions.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out for collaborations or opportunities!</p>
+  <footer>
+    <p>© 2025 Vishwa Sakthivel</p>
     <div class="contact-links">
       <a href="mailto:vishwasakthivel374@gmail.com"><i class="fas fa-envelope"></i> Email</a>
       <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/vishwa374"><i class="fab fa-github"></i> GitHub</a>
     </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Vishwa Sakthivel — Made with <span style="color:#00A8E8;">&#10084;</span></p>
   </footer>
-
-  <!-- Snow Effect Script -->
-  <script>
-    const canvas = document.createElement('canvas');
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resize); resize();
-    const numFlakes = 70, flakes = [];
-    for (let i = 0; i < numFlakes; i++) flakes.push({ x: Math.random()*width, y: Math.random()*height, r: Math.random()*4+1, d: Math.random()*numFlakes });
-    let angle = 0;
-    function drawSnow() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'white'; ctx.beginPath();
-      for (let i = 0; i < numFlakes; i++) {
-        const f = flakes[i]; ctx.moveTo(f.x, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
-      } ctx.fill(); updateSnow();
-    }
-    function updateSnow() {
-      angle += 0.003;
-      for (let i = 0; i < numFlakes; i++) {
-        const f = flakes[i];
-        f.y += Math.cos(angle+f.d)+1+f.r/2;
-        f.x += Math.sin(angle)*2;
-        if (f.x>width+5||f.x<-5||f.y>height) {
-          if (i%3>0) flakes[i]={x:Math.random()*width,y:-10,r:f.r,d:f.d};
-          else if (Math.sin(angle)>0) flakes[i]={x:-5,y:Math.random()*height,r:f.r,d:f.d};
-          else flakes[i]={x:width+5,y:Math.random()*height,r:f.r,d:f.d};
-        }
-      }
-    }
-    setInterval(drawSnow, 33);
-  </script>
 </body>
 </html>
-
