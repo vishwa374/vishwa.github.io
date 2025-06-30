@@ -12,7 +12,7 @@
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(120deg, #e0eafc, #cfdef3 100%);
+      background: #f5f7fa;
       color: #222;
     }
     canvas {
@@ -116,9 +116,15 @@
       box-shadow: 0 4px 18px #b5e1fa;
       background: #d3f1ff;
     }
-    #about p {
-      font-size: 1.08rem;
-      line-height: 1.6;
+    .section-heading {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .bg-dev {
+      background: #e0f7fa;
+    }
+    .bg-marketing {
+      background: #fce4ec;
     }
     #contact p {
       font-size: 1.06rem;
@@ -130,6 +136,7 @@
       gap: 1.5rem;
       margin-top: 0.5rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .contact-links a {
       display: inline-flex;
@@ -172,8 +179,8 @@
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#software">Software Dev</a></li>
+      <li><a href="#marketing">Marketing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -185,47 +192,54 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Motivated and curious individual with a growing skill set in programming and problem-solving, currently focused on deepening knowledge in Java, Python, and artificial intelligence. 
-      Passionate about building web applications, optimizing digital marketing strategies, and always eager to learn new technologies. 
-      Dedicated to delivering impactful solutions and thriving in collaborative, fast-paced environments.
-    </p>
+    <p>Motivated and curious individual with a growing skill set in programming and problem-solving, currently focused on deepening knowledge in Java, Python, and artificial intelligence. Passionate about building user-focused applications that align technology with real-world needs. Continuously learning and driven to contribute to innovative projects blending intelligent systems, smart design, and business impact.</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="software" class="bg-dev">
+    <h2 class="section-heading">Software Development</h2>
+    <h3>Skills</h3>
     <div class="skills-grid">
       <div class="skill-card"><i class="fab fa-java"></i> Java</div>
       <div class="skill-card"><i class="fas fa-leaf"></i> Spring Boot</div>
       <div class="skill-card"><i class="fab fa-react"></i> React.js</div>
-      <div class="skill-card"><i class="fab fa-html5"></i> HTML &amp; CSS</div>
+      <div class="skill-card"><i class="fab fa-html5"></i> HTML & CSS</div>
       <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
-      <div class="skill-card"><i class="fas fa-search"></i> SEO &amp; SEM</div>
-      <div class="skill-card"><i class="fab fa-google"></i> Google Analytics</div>
-      <div class="skill-card"><i class="fas fa-brain"></i> Artificial Intelligence</div>
       <div class="skill-card"><i class="fas fa-code"></i> Python</div>
-      <div class="skill-card"><i class="fas fa-chart-line"></i> Digital Marketing</div>
+      <div class="skill-card"><i class="fas fa-brain"></i> AI Basics</div>
     </div>
-  </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+    <h3>Projects</h3>
     <div class="projects-grid">
       <div class="project-card">
         <h3><i class="fas fa-user-md"></i> Doctor Booking Website</h3>
-        <p>MERN stack app for patient-doctor scheduling. Features secure authentication, real-time booking, and responsive design.</p>
-      </div>
-      <div class="project-card">
-        <h3><i class="fas fa-leaf"></i> Eco Gifts SEO Project</h3>
-        <p>Improved organic ranking for an eco-friendly gifting brand, resulting in a 40% traffic increase within 3 months.</p>
+        <p>MERN stack app for patient-doctor scheduling with secure authentication and responsive design.</p>
       </div>
       <div class="project-card">
         <h3><i class="fas fa-id-card-alt"></i> Personal Portfolio</h3>
-        <p>Responsive site built with HTML, CSS, and deployed on GitHub Pages. Showcases projects, skills, and digital presence.</p>
+        <p>Responsive portfolio built with HTML, CSS, and deployed on GitHub Pages showcasing skills and projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="marketing" class="bg-marketing">
+    <h2 class="section-heading">Digital Marketing</h2>
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fas fa-search"></i> SEO & SEM</div>
+      <div class="skill-card"><i class="fab fa-google"></i> Google Analytics</div>
+      <div class="skill-card"><i class="fas fa-chart-line"></i> Ad Optimization</div>
+      <div class="skill-card"><i class="fas fa-chart-bar"></i> Data Analysis</div>
+    </div>
+
+    <h3>Projects</h3>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3><i class="fas fa-leaf"></i> Eco Gifts SEO Project</h3>
+        <p>Improved organic ranking for eco-friendly gifting brand, resulting in a 40% traffic increase in 3 months.</p>
       </div>
       <div class="project-card">
         <h3><i class="fas fa-bullhorn"></i> Ad Campaign Optimization</h3>
-        <p>Managed &amp; optimized Google Ads campaigns, reducing CPC by 20% while increasing conversions for multiple clients.</p>
+        <p>Managed & optimized Google Ads campaigns, reducing CPC by 20% and increasing conversions.</p>
       </div>
     </div>
   </section>
@@ -234,9 +248,9 @@
     <h2>Contact</h2>
     <p>Feel free to reach out for collaborations or opportunities!</p>
     <div class="contact-links">
-      <a href="mailto:vishwasakthivel374@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/vishwa374" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:vishwasakthivel374@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://www.linkedin.com/in/vishwa-sakthivel-662154255/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/vishwa374"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </section>
 
@@ -250,46 +264,28 @@
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
     let width, height;
-    function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-    const numFlakes = 70;
-    const flakes = [];
-    for (let i = 0; i < numFlakes; i++) {
-      flakes.push({ x: Math.random() * width, y: Math.random() * height, r: Math.random() * 4 + 1, d: Math.random() * numFlakes });
-    }
+    function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+    const numFlakes = 70, flakes = [];
+    for (let i = 0; i < numFlakes; i++) flakes.push({ x: Math.random()*width, y: Math.random()*height, r: Math.random()*4+1, d: Math.random()*numFlakes });
+    let angle = 0;
     function drawSnow() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'white';
-      ctx.beginPath();
+      ctx.fillStyle = 'white'; ctx.beginPath();
       for (let i = 0; i < numFlakes; i++) {
-        const f = flakes[i];
-        ctx.moveTo(f.x, f.y);
-        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
-      }
-      ctx.fill();
-      updateSnow();
+        const f = flakes[i]; ctx.moveTo(f.x, f.y); ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+      } ctx.fill(); updateSnow();
     }
-    let angle = 0;
     function updateSnow() {
       angle += 0.003;
       for (let i = 0; i < numFlakes; i++) {
         const f = flakes[i];
-        f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
-        f.x += Math.sin(angle) * 2;
-        if (f.x > width + 5 || f.x < -5 || f.y > height) {
-          if (i % 3 > 0) {
-            flakes[i] = { x: Math.random() * width, y: -10, r: f.r, d: f.d };
-          } else {
-            if (Math.sin(angle) > 0) {
-              flakes[i] = { x: -5, y: Math.random() * height, r: f.r, d: f.d };
-            } else {
-              flakes[i] = { x: width + 5, y: Math.random() * height, r: f.r, d: f.d };
-            }
-          }
+        f.y += Math.cos(angle+f.d)+1+f.r/2;
+        f.x += Math.sin(angle)*2;
+        if (f.x>width+5||f.x<-5||f.y>height) {
+          if (i%3>0) flakes[i]={x:Math.random()*width,y:-10,r:f.r,d:f.d};
+          else if (Math.sin(angle)>0) flakes[i]={x:-5,y:Math.random()*height,r:f.r,d:f.d};
+          else flakes[i]={x:width+5,y:Math.random()*height,r:f.r,d:f.d};
         }
       }
     }
@@ -297,4 +293,3 @@
   </script>
 </body>
 </html>
-
