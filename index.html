@@ -11,24 +11,38 @@
       font-family: 'Roboto', Arial, sans-serif;
       background: #f9fafc;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       text-align: center;
       padding: 4rem 1rem 3rem 1rem;
       background: linear-gradient(120deg, #00C6FF, #0072FF);
       color: #fff;
+      position: relative;
+      overflow: hidden;
     }
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease-out forwards;
     }
     header p {
       font-size: 1.4rem;
       margin: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .buttons {
       margin-top: 2rem;
+      animation: fadeIn 1.5s ease-out forwards;
     }
     .buttons a {
       display: inline-block;
@@ -51,6 +65,13 @@
       max-width: 1100px;
       margin: 4rem auto;
       padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     section h2 {
       text-align: center;
@@ -146,70 +167,74 @@
   <section id="about">
     <h2>About Me</h2>
     <p class="about-text">
-      Motivated and curious individual with a growing skill set in programming and problem-solving, currently focused on deepening knowledge in Java, Python, and artificial intelligence. Actively exploring how AI can be leveraged not just in software development, but also in shaping data-driven business strategies and scalable digital solutions. Passionate about building user-focused applications that align technology with real-world needs. Continuously learning and driven to contribute to innovative projects that blend intelligent systems, smart design, and business impact.
+      Motivated and curious individual with growing expertise in Java, Python, React.js, and AI. Experienced in building real-world projects blending software development with strategic digital marketing for impactful user and business results.
     </p>
   </section>
 
+  <!-- Internships -->
   <section id="internships">
     <h2>Internship Experience</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?robotics,technology" alt="CVRDE Internship">
+        <img src="https://source.unsplash.com/600x400/?robotics,military" alt="CVRDE Internship">
         <div class="card-content">
           <h3>Software Dev Intern - CVRDE (DRDO)</h3>
-          <p>Worked on helmet-mounted display UI prototyping and integrations for military tank applications to enhance usability and data pipelines.</p>
+          <p>Worked on helmet-mounted display UI prototyping and integration for military tank systems enhancing data usability pipelines.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?sustainability,eco" alt="Sustainability Intern">
+        <img src="https://source.unsplash.com/600x400/?sustainability,branding" alt="Gratify Eco Gifts">
         <div class="card-content">
           <h3>Sustainability Associate Intern - Gratify Eco Gifts</h3>
-          <p>Developed digital marketing strategies to boost eco-friendly branding and corporate collaborations with sustainable product campaigns.</p>
+          <p>Developed SEO and digital marketing strategies for eco-friendly branding and corporate collaborations.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
     <h2>Software Development Projects</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?doctor,app" alt="Doctor Booking Website">
+        <img src="https://source.unsplash.com/600x400/?doctor,booking,app" alt="Doctor Booking Website">
         <div class="card-content">
           <h3>Doctor Booking Website</h3>
-          <p>MERN stack app for patient-doctor scheduling with secure authentication, real-time booking, and admin dashboards.</p>
+          <p>MERN stack app for real-time patient-doctor scheduling with secure authentication and admin dashboards.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?portfolio,web" alt="Portfolio">
+        <img src="https://source.unsplash.com/600x400/?portfolio,webdesign" alt="Portfolio Website">
         <div class="card-content">
           <h3>Personal Portfolio</h3>
-          <p>Responsive site built with HTML, CSS, GitHub Pages deployment showcasing projects, skills, and internships.</p>
+          <p>Responsive portfolio showcasing projects, skills, and experiences with modern UI design and deployment.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Digital Marketing -->
   <section id="marketing">
     <h2>Digital Marketing Projects</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?seo,marketing" alt="SEO Project">
+        <img src="https://source.unsplash.com/600x400/?seo,analytics" alt="SEO Project">
         <div class="card-content">
           <h3>Eco Gifts SEO Project</h3>
-          <p>Optimized website SEO for eco-friendly gifting brand, increasing organic traffic by 40% in 3 months with strategic keyword ranking.</p>
+          <p>Optimized SEO for eco-gifting brand increasing organic traffic by 40% within 3 months with targeted keyword strategy.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/600x400/?ads,google" alt="Ad Campaign Optimization">
+        <img src="https://source.unsplash.com/600x400/?ads,campaign" alt="Ad Campaign">
         <div class="card-content">
           <h3>Ad Campaign Optimization</h3>
-          <p>Managed and optimized Google Ads campaigns, reducing CPC by 20% while increasing conversions for multiple clients efficiently.</p>
+          <p>Managed Google Ads campaigns, reduced CPC by 20%, and improved conversions efficiently.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
     <h2>Skills & Technologies</h2>
     <div class="skills-grid">
@@ -236,6 +261,22 @@
       <a href="https://github.com/vishwa374">GitHub</a>
     </div>
   </footer>
+
+  <!-- JavaScript for scroll reveal animation -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealSection = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom){
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealSection);
+    window.addEventListener('load', revealSection);
+  </script>
 
 </body>
 </html>
